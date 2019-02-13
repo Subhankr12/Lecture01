@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>FizzBuzz</title>
+  </head>
+
+  <body>
+    <input id="box" /> <button onclick="printlist()">GO</button>
+    <ul id="items"></ul>
+
+    <script>
+      function printlist() {
+        var len = document.getElementById("box").value;
+        var list_item = ` `;
+        var i;
+        for (i = 1; i <= len; i++) {
+          if (i % 3 == 0 && i % 5 == 0)
+            list_item = `${list_item}<li>fizzbuzz</li>`;
+          else if (i % 3 == 0) list_item = `${list_item}<li>fizz</li>`;
+          else if (i % 5 == 0) list_item = `${list_item}<li>buzz</li>`;
+          else list_item = `${list_item}<li>${i}</li>`;
+        }
+
+        document.getElementById("items").innerHTML = list_item;
+      }
+    </script>
+  </body>
+</html>
